@@ -27,7 +27,7 @@ const Landing = () => {
       <Navbar />
 
       <h1>Welcome to MoneyMate💰</h1>
-      <h4>Your daily expense tracker, by Rishit Mohanty</h4>
+      <h4>Your daily expense tracker, by Asutosh Mohapatra</h4>
       <p>Track your expenses easily and efficiently.</p>
 
       {!user && (

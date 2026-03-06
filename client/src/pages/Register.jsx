@@ -27,7 +27,7 @@ const Register = () => {
     setSuccess('');
 
     try {
-      const res = await axios.post('https://expense-tracker-back-ac9z.onrender.com/api/auth/register', formData);
+      const res = await axios.post('https://localhost:5000/api/auth/register', formData);
 
       setSuccess('Registration successful! You can now log in.');
       setLoading(false);

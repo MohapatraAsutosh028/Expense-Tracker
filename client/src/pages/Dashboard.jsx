@@ -116,7 +116,7 @@ const Dashboard = () => {
 
     const fetchExpenses = async (phoneNumber) => {
         try {
-            const res = await axios.get(`https://expense-tracker-back-ac9z.onrender.com/api/expenses/${phoneNumber}`);
+            const res = await axios.get(`https://localhost:5000/api/expenses/${phoneNumber}`);
             setExpenses(res.data);
             setLoading(false);
         } catch (err) {
@@ -147,8 +147,8 @@ const Dashboard = () => {
             console.log("Parsed:", parsed);
 
             const title = parsed.type === 'Credit' 
-                ? `💰 Received from ${parsed.entity}` 
-                : `💸 Paid to ${parsed.entity}`;
+                ? `Received from ${parsed.entity}` 
+                : `Paid to ${parsed.entity}`;
             
             const payload = {
                 title,
@@ -160,7 +160,7 @@ const Dashboard = () => {
 
             console.log("Sending payload:", payload);
 
-            const res = await axios.post("https://expense-tracker-back-ac9z.onrender.com/api/expenses", payload);
+            const res = await axios.post("https://localhost:5000/api/expenses", payload);
 
             setExpenses([res.data, ...expenses]);
             setUpiMessage("");

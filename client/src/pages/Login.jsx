@@ -18,7 +18,7 @@ const Login = () => {
     setError('');
 
     try {
-      const res = await axios.post('https://expense-tracker-back-ac9z.onrender.com/api/auth/login', formData);
+      const res = await axios.post('https://localhost:5000/api/auth/login', formData);
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));
       setLoading(false);
